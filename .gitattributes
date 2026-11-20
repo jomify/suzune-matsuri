@@ -29,3 +29,4 @@
 
 # Keep the small README previews available to GitHub's Markdown renderer.
 docs/media/*.jpg -filter -diff -merge -text
+docs/media/*.png -filter -diff -merge -text
