@@ -30,6 +30,7 @@ namespace
 	const FLinearColor FallbackToriiRed(0.72f, 0.07f, 0.025f);
 	const FLinearColor FallbackLacquer(0.025f, 0.018f, 0.02f);
 	const FLinearColor FallbackGold(0.92f, 0.52f, 0.08f);
+	const FLinearColor FallbackStone(0.15f, 0.10f, 0.13f);
 
 	void SpawnHeroine(UWorld& World, EMatsuriHero Hero, const FVector& Spot)
 	{
@@ -67,9 +68,14 @@ namespace
 
 	void SpawnFallbackTorii(UWorld& World, const FVector& Base)
 	{
-		// The title stage is also useful in a clean source checkout where Tripo meshes are absent.
-		// Keep the silhouette legible from the menu camera with the same red / black / gold language as
-		// the authored torii mesh.
+		// Frame the whole gate behind the lanterns, with a low platform and stepping stones leading to it.
+		Matsuri::Decor::PlaceTrim(World, FVector(1500.0f, 0.0f, -25.0f), FVector(5000.0f, 5000.0f, 50.0f), {}, FallbackLacquer);
+		Matsuri::Decor::PlaceTrim(World, Base - FVector(0.0f, 0.0f, 7.0f), FVector(420.0f, 850.0f, 14.0f), {}, FallbackStone);
+		for (int32 Stone = 0; Stone < 6; ++Stone)
+		{
+			const FVector Center(460.0f + Stone * 190.0f, Base.Y, 2.0f);
+			Matsuri::Decor::PlaceTrim(World, Center, FVector(174.0f, 340.0f, 4.0f), {}, FallbackStone);
+		}
 		const FVector PostSize(56.0f, 72.0f, 520.0f);
 		constexpr float HalfWidth = 300.0f;
 		Matsuri::Decor::PlaceTrim(World, Base + FVector(0.0f, -HalfWidth, 260.0f), PostSize, {}, FallbackToriiRed);
@@ -86,15 +92,17 @@ ACameraActor* Matsuri::TitleStage::Build(UWorld& World)
 	const FMatsuriFloorTheme Theme = Matsuri::Floors::ThemeFor(StageFloor);
 	Matsuri::Builder::SpawnEnvironment(World, Theme);
 
-	FMatsuriFloorLayout Ground;
-	Ground.Blocks.Add({ EMatsuriBlock::Ground, FVector(1500.0f, 0.0f, -25.0f), FVector(5000.0f, 5000.0f, 50.0f) });
-	Matsuri::Builder::SpawnBlocks(World, Ground, Theme);
-
 	// The approach: a torii behind the heroines, stone lanterns either side, chochin overhead.
 	const FVector ToriiBase(1150.0f, 150.0f, 0.0f);
-	if (!Matsuri::Decor::PlaceArt(World, TEXT("SM_Prop_Torii"), ToriiBase, FRotator::ZeroRotator, 1.0f))
+	if (Matsuri::Decor::PlaceArt(World, TEXT("SM_Prop_Torii"), ToriiBase, FRotator::ZeroRotator, 1.0f))
 	{
-		SpawnFallbackTorii(World, ToriiBase);
+		FMatsuriFloorLayout Ground;
+		Ground.Blocks.Add({ EMatsuriBlock::Ground, FVector(1500.0f, 0.0f, -25.0f), FVector(5000.0f, 5000.0f, 50.0f) });
+		Matsuri::Builder::SpawnBlocks(World, Ground, Theme);
+	}
+	else
+	{
+		SpawnFallbackTorii(World, FVector(1820.0f, 300.0f, 14.0f));
 	}
 	Matsuri::Decor::PlaceArt(World, TEXT("SM_Prop_StoneLantern"), FVector(850.0f, -330.0f, 0.0f), FRotator(0.0f, 20.0f, 0.0f), 0.8f);
 	Matsuri::Decor::PlaceArt(World, TEXT("SM_Prop_StoneLantern"), FVector(850.0f, 640.0f, 0.0f), FRotator(0.0f, -20.0f, 0.0f), 0.8f);

@@ -7,6 +7,8 @@ public class SuzuneMatsuri : ModuleRules
 	public SuzuneMatsuri(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+		// Gameplay files keep their constants local to each translation unit.
+		bUseUnity = false;
 
 		PublicDependencyModuleNames.AddRange(new string[] {
 			"Core",
