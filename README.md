@@ -4,9 +4,11 @@
 
 [下载 Windows 试玩版](https://github.com/jomify/suzune-matsuri/releases/latest) · [中文代码导读](docs/code-guide/README.md) · [Boss AI 设计](docs/boss_plan.md)
 
+![公开版标题界面。朱红鸟居与灯笼位于菜单右侧。](docs/media/title.jpg)
+
 ## 开始游戏
 
-下载 `SuzuneMatsuri-Windows-x64.zip`，完整解压后运行 `SuzuneMatsuri.exe`。试玩版可以离线运行。源代码和试玩版使用程序化布景、占位模型和游戏音效。角色模型、剧情影片、场景配乐与 Fab 素材需要分别取得授权后导入。 [素材与许可](THIRD_PARTY_NOTICES.md)
+下载 `SuzuneMatsuri-Windows-x64.zip`，完整解压后运行 `SuzuneMatsuri.exe`。试玩版可以离线运行。源代码和试玩版使用程序化布景、占位模型和游戏音效。角色模型、剧情影片、场景配乐与 Fab 素材需要分别取得授权后导入。缺省影片会自动跳过。 [素材与许可](THIRD_PARTY_NOTICES.md)
 
 | 操作 | 按键 |
 | --- | --- |
