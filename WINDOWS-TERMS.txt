@@ -1,0 +1,5 @@
+Suzune’s Night Festival — Windows build terms
+
+You may use the Unreal Engine components as incorporated into this game to run and play the game. Unreal Engine components are furnished as part of the game, subject to the proprietary notices in THIRD_PARTY_NOTICES.md. Separate use of those components is governed by their applicable license.
+
+THE UNREAL ENGINE TECHNOLOGY IS PROVIDED AS IS. ALL REPRESENTATIONS, WARRANTIES, AND CONDITIONS RELATING TO THAT TECHNOLOGY ARE DISCLAIMED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. TO THE EXTENT PERMITTED BY LAW, EPIC GAMES AND ITS LICENSORS SHALL HAVE NO LIABILITY ARISING OUT OF USE OF THAT TECHNOLOGY.

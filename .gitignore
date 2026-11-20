@@ -1,0 +1,46 @@
+# Unreal build / cache output
+SuzuneMatsuri/Binaries/
+SuzuneMatsuri/Intermediate/
+SuzuneMatsuri/Saved/
+SuzuneMatsuri/DerivedDataCache/
+SuzuneMatsuri/*.sln
+SuzuneMatsuri/.vs/
+SuzuneMatsuri/.vsconfig
+SuzuneMatsuri/Build/
+SuzuneMatsuri/*.suo
+SuzuneMatsuri/*.VC.db
+SuzuneMatsuri/*.VC.opendb
+
+# Local agent runtime state
+.omx/
+
+# Local logs and screenshots from tools/
+logs/
+
+# Secrets (API keys for Tripo / LLM backend)
+**/vital_information/
+**/*api_key*.json
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.pyc
+
+# Tripo raw downloads (normalized copies live in SourceArt)
+tools/tripo/out/_raw/
+
+# Local music references kept outside the game and its distribution.
+SuzuneMatsuri/SourceArt/Audio/sp/
+
+# Purchased Fab asset packs (licensed per user; never commit them). Add them from your Fab library:
+# "Mountain Temple" by Hivemind -> SuzuneMatsuri/Content/Mountain_Shrine. The game dresses scenes with it when present.
+SuzuneMatsuri/Content/Mountain_Shrine/
+SuzuneMatsuri/Content/__ExternalActors__/Mountain_Shrine/
+
+# Packaged builds (tools: RunUAT BuildCookRun -archivedirectory=Package)
+Package/

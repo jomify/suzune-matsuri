@@ -1,0 +1,20 @@
+{
+  "source_files": 231,
+  "cpp_headers": 215,
+  "build_files": 3,
+  "tool_scripts": 13,
+  "documents": 7,
+  "local_links_checked": 238,
+  "missing_files": [],
+  "broken_links": [],
+  "missing_python_functions": [],
+  "unmatched_header_declaration_candidates": [],
+  "registered_test_classes": 99,
+  "missing_test_classes": [],
+  "manual_exclusions": [
+    "MatsuriArt.h: PortraitBustUV and PortraitFaceUV are initialized constants",
+    "MatsuriUIStyle.h: eight palette entries are initialized constants",
+    "MatsuriTestKit.h: It is a TActorIterator local variable, not a function"
+  ],
+  "method_limit": "Static filename, symbol-name and local-link coverage; regex candidates manually reviewed. Not a compiler proof or gameplay test."
+}

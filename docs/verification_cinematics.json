@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-31",
+  "editor_build": "Succeeded",
+  "nullrhi_suite": {
+    "success": 94,
+    "fail": 0
+  },
+  "rendered_tests": [
+    "SuzuneMatsuri.E2E.CinematicFailureAndSkip",
+    "SuzuneMatsuri.E2E.CinematicFiveMovies",
+    "SuzuneMatsuri.E2E.CinematicPlayback",
+    "SuzuneMatsuri.E2E.DefeatCinematic",
+    "SuzuneMatsuri.E2E.Story",
+    "SuzuneMatsuri.E2E.UltimateMio",
+    "SuzuneMatsuri.E2E.UltimateSakura",
+    "SuzuneMatsuri.E2E.UltimateSuzune"
+  ],
+  "source_movies": 8,
+  "audio_tracks": 0,
+  "limitations": [
+    "Packaged playback and another machine are unverified.",
+    "Defeat story clip depicts Sakura for all heroines."
+  ]
+}
